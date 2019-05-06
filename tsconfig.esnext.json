@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "noImplicitAny": true,
+    "strict": true,
+    "outDir": "./dist/esnext",
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "exclude": ["node_modules"]
+}
