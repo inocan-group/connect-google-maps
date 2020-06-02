@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.preload = exports.loadNow = void 0;
 const common_types_1 = require("common-types");
 const cache = {};
 const BASE_URL = "https://maps.googleapis.com/maps/api/js";
@@ -28,7 +29,7 @@ exports.loadNow = loadNow;
 async function preload(library, apiKey, delay = 2000) {
     addPreloadLinkToBrowser(library, apiKey);
     await common_types_1.wait(delay);
-    await addScriptTagToBrowser(library);
+    await addScriptTagToBrowser(library, apiKey);
 }
 exports.preload = preload;
 async function addScriptTagToBrowser(library, apiKey, options = {}) {

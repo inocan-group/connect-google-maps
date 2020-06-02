@@ -46,7 +46,7 @@ export async function preload(
 ) {
   addPreloadLinkToBrowser(library, apiKey);
   await wait(delay);
-  await addScriptTagToBrowser(library);
+  await addScriptTagToBrowser(library, apiKey);
 }
 
 async function addScriptTagToBrowser(

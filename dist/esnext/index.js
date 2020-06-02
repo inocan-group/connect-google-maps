@@ -25,7 +25,7 @@ export async function loadNow(library, apiKey) {
 export async function preload(library, apiKey, delay = 2000) {
     addPreloadLinkToBrowser(library, apiKey);
     await wait(delay);
-    await addScriptTagToBrowser(library);
+    await addScriptTagToBrowser(library, apiKey);
 }
 async function addScriptTagToBrowser(library, apiKey, options = {}) {
     if (checkIfScriptTagExists(library, apiKey)) {
