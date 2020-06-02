@@ -25,6 +25,7 @@
   "homepage": "https://github.com/inocan-group/connect-google-maps#readme",
   "devDependencies": {
     "@types/google-maps": "^3.2.0",
+    "common-types": "^1.15.1",
     "google-maps": "^3.3.0"
   }
 }

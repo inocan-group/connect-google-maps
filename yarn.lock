@@ -14,6 +14,18 @@
   resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.30.19.tgz#359c025e244490b0775826fb216bed093fd66b16"
   integrity sha512-9uzg5jC6FRyAsMrhOLnUbblyN1xbcOVnqecQZxrnCDxTKssn4lwk0K4EWsw/sw8cJX32MFRMivyAT8dX/JBatg==
 
+"@types/json-schema@^7.0.4":
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
+  integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
+
+common-types@^1.15.1:
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/common-types/-/common-types-1.15.1.tgz#5f61b361fe3f85bcb4f1fe49c5b42b8e0e50f6fb"
+  integrity sha512-CJd+TPztvIkGWeubz95d66zY/I5NvXJ/LjcEOVIS7iCZ/glxmeo6wi2jo8g/h+cIo4SbhY+iA9ZUU6ONlcq75A==
+  dependencies:
+    "@types/json-schema" "^7.0.4"
+
 google-maps@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/google-maps/-/google-maps-3.3.0.tgz#4432b4715406bc15268ad35b1dd1b04d974956a6"
