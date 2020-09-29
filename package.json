@@ -1,13 +1,16 @@
 {
   "name": "connect-google-maps",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Typescript library to gracefully add the Google Maps API into your web app in a performant way",
   "main": "dist/cjs/index.js",
-  "module": "dist/esnext/index.js",
-  "typings": "dist/esnext/index.d.ts",
+  "module": "dist/es/index.js",
+  "typings": "dist/typings/index.d.ts",
   "scripts": {
-    "build": "tsc -P tsconfig.cjs.json && tsc -P tsconfig.esnext.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist/**/*",
+    "build": "run-s clean build:lib build:typings",
+    "build:lib": "node ./build/index cjs es",
+    "build:typings": "tsc -P tsconfig.es.json --declaration --outDir dist/types",
+    "analyze": "cross-env ANALYZE=true node ./build/index es"
   },
   "repository": {
     "type": "git",
@@ -24,8 +27,20 @@
   },
   "homepage": "https://github.com/inocan-group/connect-google-maps#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "@types/google-maps": "^3.2.0",
-    "common-types": "^1.15.1",
-    "google-maps": "^3.3.0"
+    "common-types": "^1.15.8",
+    "cross-env": "^7.0.2",
+    "google-maps": "^4.3.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.28.2",
+    "rollup-plugin-analyzer": "^3.3.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.27.3",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.0.3",
+    "typescript-transform-paths": "^2.0.1"
   }
 }

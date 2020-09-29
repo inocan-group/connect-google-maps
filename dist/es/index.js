@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * Provides a logical test to see if the passed in event is a LambdaProxy request or just a
  * straight JS object response. This is useful when you have both an HTTP event and a Lambda-to-Lambda
@@ -276,5 +272,4 @@ function checkIfScriptTagExists(library, apiKey) {
     return Boolean(found);
 }
 
-exports.loadNow = loadNow;
-exports.preload = preload;
+export { loadNow, preload };

@@ -8,15 +8,7 @@
     "strict": true,
     "preserveConstEnums": true,
     "removeComments": true,
-    "noEmit": true,
-    "typeRoots": ["./node_modules/@types"]
+    "noEmit": true
   },
-  "include": ["src/**/*"],
-  "exclude": [
-    "node_modules",
-    "**/*-spec.ts",
-    "node_modules/firebase-admin/lib/index.d.ts",
-    "node_modules/@google-cloud/firestore/types/firestore.d.ts",
-    "typings"
-  ]
+  "include": ["src"]
 }
