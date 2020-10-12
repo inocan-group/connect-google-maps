@@ -1,10 +1,10 @@
 {
   "name": "connect-google-maps",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Typescript library to gracefully add the Google Maps API into your web app in a performant way",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "typings": "dist/typings/index.d.ts",
+  "typings": "dist/types/index.d.ts",
   "scripts": {
     "clean": "rimraf dist/**/*",
     "build": "run-s clean build:lib build:typings",
