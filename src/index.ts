@@ -23,12 +23,14 @@ declare global {
  */
 export async function loadNow(
   library: IGoogleMapsLibrary,
-  apiKey?: string
+  apiKey?: string,
+  region?: string,
+  language?: string
 ): Promise<IGoogleApi> {
   if (checkIfScriptTagExists(library, apiKey)) {
     return window.google;
   }
-  await addScriptTagToBrowser(library, apiKey);
+  await addScriptTagToBrowser(library, apiKey, region, language);
   return window.google;
 }
 
@@ -52,6 +54,8 @@ export async function preload(
 async function addScriptTagToBrowser(
   library: IGoogleMapsLibrary,
   apiKey?: string,
+  region?: string,
+  language?: string,
   options: { timeout?: number } = {}
 ) {
   if (checkIfScriptTagExists(library, apiKey)) {
@@ -72,7 +76,7 @@ async function addScriptTagToBrowser(
   const waitForLoad = () => {
     var script = document.createElement("script");
     script.id = `google-maps-${library}-js`;
-    script.src = getUrl(library, apiKey);
+    script.src = getUrl(library, apiKey, true, region, language);
     (document.querySelector("head") as HTMLHeadElement).appendChild(script);
 
     return new Promise(resolve => {
@@ -96,10 +100,16 @@ function addPreloadLinkToBrowser(library: IGoogleMapsLibrary, apiKey?: string) {
   (document.querySelector("head") as HTMLHeadElement).appendChild(link);
 }
 
-function getUrl(library: IGoogleMapsLibrary, apiKey?: string, callback: boolean = true) {
+function getUrl(library: IGoogleMapsLibrary, apiKey?: string, callback: boolean = true, region?: string, language?: string) {
   let url = `${BASE_URL}?libraries=${library}&sensors=false`;
   if (apiKey) {
     url = `${url}&key=${apiKey}`;
+  }
+  if (region) {
+    url = `${url}&region=${region}`;
+  }
+  if (language) {
+    url = `${url}&language=${language}`;
   }
   if (callback) {
     url = `${url}&callback=${library}LoaderCallback`;
