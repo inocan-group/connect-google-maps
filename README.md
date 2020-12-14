@@ -92,6 +92,8 @@ export default {
 </script>
 ```
 
+> Note: the `loadNow` API has been extended -- as of version `0.3.0` to include the optional inclusion of **region** and **language**. You can find more about these parameters in Google's documenation on [localization](https://developers.google.com/maps/documentation/javascript/localization)
+
 This library will return control (via promise resolution) once the library is loaded. If the library was ALREADY loaded prior to arriving at this
 page it will return immediately, if it was not loaded than it will asynchronously load it at that point in time.
 
