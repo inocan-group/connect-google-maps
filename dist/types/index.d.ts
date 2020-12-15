@@ -10,5 +10,5 @@ declare global {
         placesLookupCallback?: () => void;
     }
 }
-export declare function loadNow(library: IGoogleMapsLibrary, apiKey?: string): Promise<IGoogleApi>;
+export declare function loadNow(library: IGoogleMapsLibrary, apiKey?: string, region?: string, language?: string): Promise<IGoogleApi>;
 export declare function preload(library: IGoogleMapsLibrary, apiKey?: string, delay?: number): Promise<void>;
