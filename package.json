@@ -1,6 +1,6 @@
 {
   "name": "connect-google-maps",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A Typescript library to gracefully add the Google Maps API into your web app in a performant way",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
